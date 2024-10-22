@@ -1,0 +1,36 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #000b29;
+}
+
+
+@media (min-width: 992px) and (max-width: 1200px){
+
+}
+
+
+
+@media (min-width: 767px) and (max-width: 992px){
+
+}
+
+
+
+
+@media (min-width: 480px) and (max-width: 767px){
+
+}
+
+
+
+
+@media (min-width: 0px) and (max-width: 480px){
+
+}

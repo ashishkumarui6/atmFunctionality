@@ -1,0 +1,24 @@
+
+
+
+.screen {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.screen {
+    border: 1px solid #f8f5f2;
+    background-color: #f8f5f2;
+    color: #000;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    letter-spacing: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+input:focus {
+    outline: none;
+}

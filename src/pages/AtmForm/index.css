@@ -1,0 +1,287 @@
+.atm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.cardSection{
+    margin: 50px 0px;
+}
+
+.ragistercard{
+    border: 1px solid #2a2f33;
+    background: #2a2f33;
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin: 0 auto 50px auto;
+    width: 80%;
+}
+
+.topRegisterCard{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.userCardType{
+    width: 50%;
+}
+
+label{
+    text-align: left;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #edb82d;
+    margin-bottom: 10px;
+}
+
+label span{
+    color: #d70026;
+}
+
+.cardType{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+.bankCardType{
+    width: 50%;
+}
+
+.bankCard{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+.inputTop{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.inputTop .child1{
+    width: 60%;
+}
+
+.inputCardNumber{
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+
+.inputCardNumber{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+.inputTop .child2{
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+
+#valid{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+.inputBottom{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.inputBottom .child1{
+    width: 65%;
+
+}
+
+#userName{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+
+}
+.inputBottom .child2{
+    width: 35%;
+}
+
+#phoneNumber{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+
+.cardback{
+    border: 1px solid gray;
+    background: gray;
+    padding: 20px 30px;
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    z-index: 0;
+    height: 327px;
+}
+.cardback::before{
+    content: "";
+    height: 60px;
+    background-color: #000;
+    width: 100%;
+    border: 1px solid;
+    position: absolute;
+    left: -1px;
+    top: 50px;
+}
+
+.cardbackTop{
+    display: flex;
+    column-gap: 20px;
+}
+.cardbackTop{
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    left: 30px;
+}
+
+.bankName{
+    width: 70%;
+}
+
+#bankName{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+
+.pin{
+    width: 30%;
+}
+
+#pin{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+.cardbackBottom{
+    display: flex;
+    column-gap: 20px;
+}
+.cardbackBottom{
+    position: absolute;
+    top: 210px;
+    right: 30px;
+    left: 30px;
+}
+
+.bankType{
+    width: 70%;
+}
+
+#bankType{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+.bankAmount{
+    width: 30%;
+}
+
+
+#bankAmount{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 1px solid #fff;
+}
+
+.cardSectionbuttons{
+    display: flex;
+    width: 400px;
+    margin: 0 20px;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
