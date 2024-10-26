@@ -1,0 +1,43 @@
+.atm {
+    display: flex;
+}
+
+.container {
+    margin: 0px 384px;
+}
+.atm-screen {
+    margin: 50px 0px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1200px){
+
+}
+
+
+
+@media (min-width: 767px) and (max-width: 992px){
+
+}
+
+
+
+
+@media (min-width: 480px) and (max-width: 767px){
+
+}
+
+
+
+
+@media (min-width: 0px) and (max-width: 480px){
+
+}
