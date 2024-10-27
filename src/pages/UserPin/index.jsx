@@ -2,27 +2,41 @@ import React, { useState } from "react";
 import "./index.css";
 import Button from "../../widgets/Button";
 import Inputfield from "../../widgets/Inputfield";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Userpin = () => {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const params = useParams();
   const [pin, setPin] = useState("");
 
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onchange = (e) => {
     setPin(e);
   };
 
-  const GotoHome = () => {
-    Navigate("/");
+  const onGoToDashboard = () => {
+    const existingUser = users.find(
+      (it) => it.CardNumber === params.card && it.pin === pin
+    );
+    if (existingUser) {
+      localStorage.setItem("loggedUser", JSON.stringify(existingUser));
+      navigate("/dashboard");
+    } else {
+    }
   };
 
-  const OnGetCanfirm = () => {
-    Navigate("/MainUser/" + pin);
+  const OnBackHome = () => {
+    navigate("/");
   };
+
+  const card = params.card;
 
   return (
     <>
+      <div className="alert">
+        <h1>{`xxxx xxxx xxxx ${card.substring(12, 16)}`}</h1>
+      </div>
       <div className="atm">
         <div className="container">
           <div className="atm-body">
@@ -33,7 +47,7 @@ const Userpin = () => {
                 type="number"
                 placeholder="Enter Your Atm Pin"
               />
-              {pin.length > 0 && pin.length !== 16 && (
+              {pin.length > 0 && pin.length !== 4 && (
                 <p
                   style={{
                     textAlign: "center",
@@ -58,9 +72,9 @@ const Userpin = () => {
               disabled={pin.length !== 4}
               name="Canfrim"
               bgColor="#486b00"
-              onclickFn={OnGetCanfirm}
+              onclickFn={onGoToDashboard}
             />
-            <Button name="Back" bgColor="#d70026" onclickFn={GotoHome} />
+            <Button onclickFn={OnBackHome} name="Back" bgColor="#d70026" />
           </div>
         </div>
       </div>

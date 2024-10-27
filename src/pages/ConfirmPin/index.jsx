@@ -1,8 +1,18 @@
 import React from "react";
 import "./index.css";
 import MiniBtn from "../../widgets/MiniBtn";
+import { useNavigate } from "react-router-dom";
 
 const ConFirmPin = () => {
+  const navigate = useNavigate();
+
+  const OncanfirmClose = () => {
+    navigate("/");
+  };
+
+  const OnpinreserDone = () => {
+    navigate("/sucessDon");
+  };
   return (
     <>
       <div className="atm">
@@ -19,8 +29,16 @@ const ConFirmPin = () => {
                   {/* <p>Please Enter Correct Old ATM Pin</p> */}
                 </div>
                 <div className="ConfirmBtn">
-                  <MiniBtn name="next" bgBtn="#486b00" />
-                  <MiniBtn name="close" bgBtn="#d70026" />
+                  <MiniBtn
+                    MiniBtnFn={OnpinreserDone}
+                    name="next"
+                    bgBtn="#486b00"
+                  />
+                  <MiniBtn
+                    MiniBtnFn={OncanfirmClose}
+                    name="close"
+                    bgBtn="#d70026"
+                  />
                 </div>
               </div>
             </div>

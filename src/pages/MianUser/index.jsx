@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import card from "../../assets/card.png";
 import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const MainUser = () => {
+  const [check, setCheck] = useState(false);
+  const navigate = useNavigate();
+  const u = JSON.parse(localStorage.getItem("loggedUser")) || {};
+
+  const onLogout = () => {
+    localStorage.removeItem("loggedUser");
+    navigate("/");
+  };
+
+  const onGoToWithdraw = () => {
+    navigate("/withdraw");
+  };
+
+  const OnUpdateBtn = () => {
+    navigate("/changepin");
+  };
+
   return (
     <>
       <div className="atm">
@@ -15,37 +33,45 @@ const MainUser = () => {
                   <FaUserCircle size={100} color="#fff" />
                 </div>
                 <div className="btnB">
-                  <button className="logout">Logout</button>
-                  <button className="withdrow">Withdrow</button>
+                  <button onClick={onLogout} className="logout">
+                    Logout
+                  </button>
+                  <button onClick={onGoToWithdraw} className="withdrow">
+                    Withdrow
+                  </button>
                 </div>
               </div>
               <div className="underdetail">
-                <p className="name">Vivek</p>
-                <p className="phone">7704984177</p>
-                <p className="bank">hdfc</p>
-                <p className="type">saving acount</p>
+                <p className="name">{u.userName}</p>
+                <p className="phone">{u.phoneNumber}</p>
+                <p className="bank">{u.bankName}</p>
+                <p className="type">{u.bankType}</p>
               </div>
               <div className="balance">
-                <h1>
-                  Acount Balance :<span>₹15000</span>
-                </h1>
-                <button className="balanceBtn">cheack balance</button>
+                {check && (
+                  <h1>
+                    Acount Balance :<span>₹{u.bankAmount}</span>
+                  </h1>
+                )}
+                <button className="balanceBtn" onClick={() => setCheck(!check)}>
+                  cheack balance
+                </button>
               </div>
               <div className="cardDetail">
                 <img src={card} alt="ATM" />
-                <h2 className="num">1234123412341234</h2>
-                <h1 className="bankName">hdfc</h1>
-                <p className="cardType">visa</p>
+                <h2 className="num">{u.CardNumber}</h2>
+                <h1 className="bankName">{u.bankCard}</h1>
+                <p className="cardType">{u.cardtype}</p>
                 <div className="validity">
                   <div className="val">
                     <p>valid</p>
                     <p className="thru">thru</p>
                   </div>
-                  <p className="date">12/24</p>
+                  <p className="date">{u.valid}</p>
                 </div>
               </div>
               <div className="bottom">
-                <p>Update Pin</p>
+                <p onClick={OnUpdateBtn}>Update Pin</p>
               </div>
             </div>
           </div>

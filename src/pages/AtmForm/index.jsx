@@ -1,17 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./index.css";
 import MiniBtn from "../../widgets/MiniBtn";
-import { json, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AtmFrom = () => {
-  const [addData, setAddData] = useState([]);
-  const parms = useParams();
-
-  const BtnNavigate = useNavigate();
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const params = useParams();
+  const navigate = useNavigate();
+  const card = params.card;
 
   const cardtype = useRef(null);
   const bankCard = useRef(null);
-  const CardNumber = useRef(null);
   const valid = useRef(null);
   const userName = useRef(null);
   const phoneNumber = useRef(null);
@@ -20,13 +19,11 @@ const AtmFrom = () => {
   const bankType = useRef(null);
   const bankAmount = useRef(null);
 
-  const Nav = useNavigate();
-
-  const OnSaveData = async () => {
+  const OnSaveData = () => {
     const SaveUser = {
       cardtype: cardtype.current.value,
       bankCard: bankCard.current.value,
-      CardNumber: CardNumber.current.value,
+      CardNumber: params.card,
       valid: valid.current.value,
       userName: userName.current.value,
       phoneNumber: phoneNumber.current.value,
@@ -36,14 +33,14 @@ const AtmFrom = () => {
       bankAmount: bankAmount.current.value,
     };
 
-    setAddData(() => [...addData, SaveUser]);
-    await localStorage.setItem("users", JSON.stringify(addData));
+    users.push(SaveUser);
 
-    Nav("/");
+    localStorage.setItem("users", JSON.stringify(users));
+    navigate("/");
   };
 
-  const OnGetcloseBtn = () => {
-    BtnNavigate("/");
+  const OnCloseForm = () => {
+    navigate("/");
   };
 
   return (
@@ -87,12 +84,8 @@ const AtmFrom = () => {
                       Card Number
                       <span>*</span>
                     </label>
-                    <p
-                      className="inputCardNumber"
-                      ref={CardNumber}
-                      id="inputCardNumber"
-                    >
-                      {"xxxxxxxxxxxx" + parms.card.substring(12, 16)}
+                    <p className="inputCardNumber" id="inputCardNumber">
+                      {`xxxx xxxx xxxx ${card.substring(12, 16)}`}
                     </p>
                   </div>
                   <div className="child2">
@@ -202,7 +195,7 @@ const AtmFrom = () => {
                 <div className="btn">
                   <MiniBtn MiniBtnFn={OnSaveData} name="Save" bgBtn="#486b00" />
                   <MiniBtn
-                    MiniBtnFn={OnGetcloseBtn}
+                    MiniBtnFn={OnCloseForm}
                     name="close"
                     bgBtn="#d70026"
                   />

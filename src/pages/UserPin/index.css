@@ -1,3 +1,18 @@
+.alert{
+    margin-top: 40px;
+}
+
+.alert h1{
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #d70026;
+    text-align: center;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .atm {
     display: flex;
 }

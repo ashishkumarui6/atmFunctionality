@@ -1,8 +1,14 @@
 import React from "react";
 import Yes from "../../assets/success.png";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 
 const SucessDon = () => {
+  const navigate = useNavigate();
+
+  const OnGoClose = () => {
+    navigate("/");
+  };
   return (
     <>
       <div className="atm">
@@ -11,7 +17,9 @@ const SucessDon = () => {
             <div className="success">
               <img src={Yes} alt="Yes" />
               <p>Done:)</p>
-              <button className="close">Close</button>
+              <button onClick={OnGoClose} className="close">
+                Close
+              </button>
             </div>
           </div>
         </div>

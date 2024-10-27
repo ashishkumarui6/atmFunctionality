@@ -2,23 +2,32 @@ import React, { useState } from "react";
 import "./index.css";
 import Inputfield from "../../widgets/Inputfield";
 import Button from "../../widgets/Button";
-import { useNavigate } from "react-router-dom";
+import { generatePath, useNavigate } from "react-router-dom";
 
 const Admin = () => {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const navigate = useNavigate();
   const [cardNum, setcardNum] = useState("");
-
-  const NevigatePin = useNavigate();
 
   const onchange = (e) => {
     setcardNum(e);
   };
 
-  const OnGotoContinue = () => {
-    const Users = JSON.parse(localStorage.getItem("users"));
-    if (Users === 1) {
-      NevigatePin("/pin/" + cardNum);
+  const onContinueToPin = () => {
+    const existingUser = users.find((it) => it.CardNumber === cardNum);
+
+    if (existingUser) {
+      const path = generatePath("pin/:card", {
+        card: cardNum,
+      });
+
+      navigate(path);
     } else {
-      NevigatePin("/form/" + cardNum);
+      const path = generatePath("/form/:card", {
+        card: cardNum,
+      });
+
+      navigate(path);
     }
   };
 
@@ -65,7 +74,7 @@ const Admin = () => {
               disabled={cardNum.length !== 16}
               name="Continue"
               bgColor="#486b00"
-              onclickFn={OnGotoContinue}
+              onclickFn={onContinueToPin}
             />
           </div>
         </div>
