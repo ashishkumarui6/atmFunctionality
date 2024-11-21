@@ -13,13 +13,7 @@ import Withdrawal from "./pages/Withdrawal";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const [token, setToken] = useState("");
-  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-
-  useEffect(() => {
-    setToken(loggedUser);
-  }, [token]);
-
+  const token = "";
   return (
     <>
       {!token ? (

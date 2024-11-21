@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import Inputfield from "../../widgets/Inputfield";
 import Button from "../../widgets/Button";
 import { generatePath, useNavigate } from "react-router-dom";
 
 const Admin = () => {
+  const [token, setToken] = useState("");
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+  useEffect(() => {
+    setToken(loggedUser);
+  }, []);
+
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const navigate = useNavigate();
   const [cardNum, setcardNum] = useState("");
