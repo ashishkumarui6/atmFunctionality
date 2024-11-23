@@ -1,10 +1,20 @@
 import React from "react";
+import Container from "../../container";
 
 const NotFound = () => {
   return (
-    <div>
-      <h2>Not Found</h2>
-    </div>
+    <Container>
+      <div>
+        <h2
+          style={{
+            color: "#fff",
+            textAlign: "center",
+          }}
+        >
+          Not Found
+        </h2>
+      </div>
+    </Container>
   );
 };
 

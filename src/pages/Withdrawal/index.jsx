@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Inputfield from "../../widgets/Inputfield";
 import Button from "../../widgets/Button";
 import { useNavigate } from "react-router-dom";
+import Container from "../../container";
 
 const Withdrawal = () => {
   const u = JSON.parse(localStorage.getItem("loggedUser"));
@@ -35,24 +36,26 @@ const Withdrawal = () => {
 
   return (
     <>
-      <div className="atm">
-        <div className="container">
-          <div className="atm-body">
-            <div className="atm-screen">
-              <Inputfield
-                onChange={onGetAmount}
-                type="number"
-                placeholder=" Enter Amount To Withdraw"
-              />
+      <Container>
+        <div className="atm">
+          <div className="container">
+            <div className="atm-body">
+              <div className="atm-screen">
+                <Inputfield
+                  onChange={onGetAmount}
+                  type="number"
+                  placeholder=" Enter Amount To Withdraw"
+                />
+              </div>
+            </div>
+            <div className="btn">
+              <Button name="Clear" bgColor="#353c3f" />
+              <Button onclickFn={onWithdraw} name="Confirm" bgColor="#486b00" />
+              <Button name="back" bgColor="#d70026" />
             </div>
           </div>
-          <div className="btn">
-            <Button name="Clear" bgColor="#353c3f" />
-            <Button onclickFn={onWithdraw} name="Confirm" bgColor="#486b00" />
-            <Button name="back" bgColor="#d70026" />
-          </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 };

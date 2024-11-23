@@ -19,8 +19,7 @@
 
 .container {
     margin: 0px 384px;
-    max-width: 1200px;
-    width: 50%;
+    width: 100%;
 }
 .atm-screen {
     margin: 50px 0px;

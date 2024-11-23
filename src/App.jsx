@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
 import Admin from "./pages/Admin";
 import Userpin from "./pages/UserPin";
 import AtmFrom from "./pages/AtmForm";
@@ -22,12 +21,12 @@ function App() {
           <Route path="/pin/:card" element={<Userpin />} />
           <Route path="/form/:card" element={<AtmFrom />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/transtionSuccess" element={<TranstionSuccess />} />
         </Routes>
       ) : (
         <Routes>
           <Route path="/dashboard" element={<MainUser />} />
           <Route path="/withdraw" element={<Withdrawal />} />
+          <Route path="/transtionSuccess" element={<TranstionSuccess />} />
           <Route path="/changepin" element={<ChangePin />} />
           <Route path="/conFirmpin" element={<ConFirmPin />} />
           <Route path="/sucessDon" element={<SucessDon />} />
