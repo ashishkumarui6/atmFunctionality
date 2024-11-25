@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
 import card from "../../assets/card.png";
 import { FaUserCircle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { generatePath, useNavigate } from "react-router-dom";
 import Container from "../../container";
+import { ContextPro } from "../../context";
 
 const MainUser = () => {
+  const ctx = useContext(ContextPro);
   const [check, setCheck] = useState(false);
   const navigate = useNavigate();
   const u = JSON.parse(localStorage.getItem("loggedUser")) || {};
 
   const onLogout = () => {
     localStorage.removeItem("loggedUser");
-    navigate("/");
+    ctx.getToken("");
   };
 
   const onGoToWithdraw = () => {
@@ -20,7 +22,10 @@ const MainUser = () => {
   };
 
   const OnUpdateBtn = () => {
-    navigate("/changepin");
+    const path = generatePath("/changepin/:card", {
+      card: u.CardNumber,
+    });
+    navigate(path);
   };
 
   return (

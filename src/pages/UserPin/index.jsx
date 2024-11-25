@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
 import Button from "../../widgets/Button";
 import Inputfield from "../../widgets/Inputfield";
 import { useNavigate, useParams } from "react-router-dom";
 import Container from "../../container";
+import { ContextPro } from "../../context";
 
 const Userpin = () => {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const params = useParams();
+  const ctx = useContext(ContextPro);
   const [pin, setPin] = useState("");
 
   const navigate = useNavigate();
@@ -20,10 +22,14 @@ const Userpin = () => {
     const existingUser = users.find(
       (it) => it.CardNumber === params.card && it.pin === pin
     );
+
     if (existingUser) {
-      localStorage.setItem("loggedUser", JSON.stringify(existingUser));
+      console.log(existingUser);
+
+      ctx.getToken(existingUser);
       navigate("/dashboard");
     } else {
+      alert("not found!");
     }
   };
 
