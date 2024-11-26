@@ -63,4 +63,8 @@
 
 @media (min-width: 0px) and (max-width: 480px){
 
+    .pin-heading{
+        font-size: 24px !important;
+    }
+
 }

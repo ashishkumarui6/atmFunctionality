@@ -51,6 +51,7 @@ const Admin = () => {
                   type="number"
                   placeholder="Enter Your Card Number"
                 />
+
                 {cardNum.length > 0 && cardNum.length !== 16 && (
                   <p
                     style={{

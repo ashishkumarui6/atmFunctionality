@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
 import MiniBtn from "../../widgets/MiniBtn";
 import { useNavigate, useParams } from "react-router-dom";
 import Container from "../../container";
+import { ContextPro } from "../../context";
 
 const ConFirmPin = () => {
   const [newPin, setNewPin] = useState("");
+  const ctx = useContext(ContextPro);
   // const [renternewPin, setRenterNewPin] = useState("");
   const navigate = useNavigate();
   const params = useParams();
 
   const OngeClose = () => {
-    navigate("/");
+    navigate("/dashboard");
   };
 
   const OngetReset = () => {
@@ -24,6 +26,10 @@ const ConFirmPin = () => {
       u[index] = isExisting;
 
       localStorage.setItem("users", JSON.stringify(u));
+
+      localStorage.removeItem("loggedUser");
+      ctx.getToken({});
+      navigate("/");
     }
   };
 

@@ -37,7 +37,7 @@ const ChangePin = () => {
             <div className="atmbody">
               <div className="wrapper">
                 <div className="updatePin">
-                  <h1>Change Your ATM Pin</h1>
+                  <h1 className="change-pin-heading">Change Your ATM Pin</h1>
                   <div className="upBottom">
                     <label htmlFor="OldPin">Old Pin</label>
                     <input

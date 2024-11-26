@@ -95,7 +95,7 @@ p {
 }
 
 .phone {
-    font-size: 24px;
+    font-size: 30px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     margin: 20px 0px;
@@ -105,7 +105,7 @@ p {
 
 
 .bank {
-    font-size: 24px;
+    font-size: 30px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     margin: 20px 0px;
@@ -114,7 +114,7 @@ p {
 }
 
 .type {
-    font-size: 16px;
+    font-size: 26px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     margin: 20px 0px;
@@ -278,3 +278,263 @@ p {
     font-weight: 500;
     cursor: pointer;
 }
+
+
+@media (min-width: 992px) and (max-width: 1200px){
+    
+
+}
+
+
+
+@media (min-width: 767px) and (max-width: 992px){
+
+
+    .name {
+        font-size: 26px;
+
+    }
+
+    
+    .phone {
+        font-size: 24px;
+        font-weight: 600;
+
+    }
+    
+    
+    .bank {
+        font-size: 30px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        margin: 20px 0px;
+        color: #d70026;
+        text-transform: uppercase;
+    }
+    
+    .type {
+        font-size: 22px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+    }
+    
+    .balance {
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    
+    .balance h1 {
+        font-size: 40px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        color: #fff;
+    }
+    
+    .balanceBtn {
+        width: 220px;
+        border-radius: 10px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .cardDetail .num {
+        width: 100%;
+        position: absolute;
+        font-size: 36px;
+        right: 1px;
+        font-family: sans-serif;
+        font-weight: 700;
+        letter-spacing: 5px;
+        left: 10px;
+        top: 60%;
+    }
+    
+    
+    .cardDetail .bankName {
+        font-size: 36px;
+    }
+    
+    
+    .cardDetail .cardType {
+        font-size: 36px;
+
+    }
+    
+    
+    .cardDetail .validity {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        position: absolute;
+        right: 15px;
+        bottom: -5px;
+        color: #fff;
+    }
+    
+    .validity .val {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        text-shadow: 0px 4px 4px #282828;
+        position: relative;
+    }
+    
+    .validity .val .thru {
+        letter-spacing: 1px;
+    }
+    
+    .val p{
+        font-size: 16px;
+    }
+    .validity .thru {
+        font-size: 16px;
+        font-weight: 600;
+        position: absolute;
+        bottom: -3px;
+    }
+    
+    .validity .date {
+        font-size: 22px;
+        font-family: sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0px 4px 4px #282828;
+        margin-top: 30px;
+    }
+
+    .update{
+        font-size: 30px !important;
+    }
+
+}
+
+
+
+
+@media (min-width: 0px) and (max-width: 480px){
+
+    .name {
+        font-size: 26px !important;
+
+    }
+
+    
+    .phone {
+        font-size: 24px;
+        font-weight: 600;
+
+    }
+    
+    
+    .bank {
+        font-size: 30px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        margin: 20px 0px;
+        color: #d70026;
+        text-transform: uppercase;
+    }
+    
+    .type {
+        font-size: 22px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+    }
+    
+    .balance {
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    
+    .balance h1 {
+        font-size: 40px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        color: #fff;
+    }
+    
+    .balanceBtn {
+        width: 220px;
+        border-radius: 10px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .cardDetail .num {
+        width: 100%;
+        position: absolute;
+        font-size: 15px;
+        right: 10px;
+        font-family: sans-serif;
+        font-weight: 700;
+        letter-spacing: 5px;
+        left: 10px;
+        top: 60%;
+    }
+    
+    
+    .cardDetail .bankName {
+        font-size: 22px;
+    }
+    
+    
+    .cardDetail .cardType {
+        font-size: 22px;
+
+    }
+    
+    
+    .cardDetail .validity {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        position: absolute;
+        right: 15px;
+        bottom: -5px;
+        color: #fff;
+    }
+    
+    .validity .val {
+        font-size: 14px;
+        font-family: sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        text-shadow: 0px 4px 4px #282828;
+        position: relative;
+    }
+    
+    .validity .val .thru {
+        letter-spacing: 1px;
+    }
+    
+    .val p{
+        font-size: 12px;
+    }
+    .validity .thru {
+        font-size: 12px;
+        font-weight: 600;
+        position: absolute;
+        bottom: -3px;
+    }
+    
+    .validity .date {
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0px 4px 4px #282828;
+        margin-top: 30px;
+    }
+    
+    
+
+
+
+}
+
+

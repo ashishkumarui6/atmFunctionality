@@ -18,7 +18,7 @@
 
 
 .updatePin h1{
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     text-decoration: underline;
     color: #d70026;
 }
@@ -76,4 +76,36 @@
 .ChangeBtn{
     display: flex;
     column-gap: 20px;
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1200px){
+
+}
+
+
+
+@media (min-width: 767px) and (max-width: 992px){
+
+}
+
+
+
+
+@media (min-width: 480px) and (max-width: 767px){
+
+}
+
+
+
+
+@media (min-width: 0px) and (max-width: 480px){
+
+    .change-pin-heading{
+        font-size: 30px !important;
+    }
+
+
+
 }

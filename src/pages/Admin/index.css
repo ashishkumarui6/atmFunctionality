@@ -110,7 +110,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        column-gap: 10px;
+        column-gap: 10px; 
+    }
+
+    .pin-heading{
+        font-size: 10px !important;
     }
 
 

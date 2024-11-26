@@ -14,7 +14,8 @@ const MainUser = () => {
 
   const onLogout = () => {
     localStorage.removeItem("loggedUser");
-    ctx.getToken("");
+    ctx.getToken({});
+    navigate("/");
   };
 
   const onGoToWithdraw = () => {
@@ -81,7 +82,9 @@ const MainUser = () => {
                   </div>
                 </div>
                 <div className="bottom">
-                  <p onClick={OnUpdateBtn}>Update Pin</p>
+                  <p onClick={OnUpdateBtn} className="update">
+                    Update Pin
+                  </p>
                 </div>
               </div>
             </div>

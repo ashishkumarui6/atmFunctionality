@@ -43,7 +43,10 @@ const Userpin = () => {
     <>
       <Container>
         <div className="alert">
-          <h1>{`xxxx xxxx xxxx ${card.substring(12, 16)}`}</h1>
+          <h1 className="pin-heading">{`xxxx xxxx xxxx ${card.substring(
+            12,
+            16
+          )}`}</h1>
         </div>
         <div className="atm">
           <div className="container">
