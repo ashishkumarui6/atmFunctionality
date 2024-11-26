@@ -47,7 +47,6 @@ const AtmFrom = () => {
   return (
     <>
       <Container>
-        {" "}
         <div className="atm">
           <div className="container">
             <div className="atmBody">
@@ -65,6 +64,7 @@ const AtmFrom = () => {
                         type="text"
                         name=""
                         placeholder="VISA,RUPAY,etc..."
+                        required
                       />
                     </div>
                     <div className="bankCardType">

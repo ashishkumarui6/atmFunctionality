@@ -6,11 +6,15 @@ import Container from "../../container";
 
 const ConFirmPin = () => {
   const [newPin, setNewPin] = useState("");
-  const [renternewPin, setRenterNewPin] = useState("");
+  // const [renternewPin, setRenterNewPin] = useState("");
   const navigate = useNavigate();
   const params = useParams();
 
-  const OnpinresertDone = () => {
+  const OngeClose = () => {
+    navigate("/");
+  };
+
+  const OngetReset = () => {
     const u = JSON.parse(localStorage.getItem("users"));
     const isExisting = u.find((it) => it.CardNumber === params.card);
     const index = u.findIndex((it) => it.CardNumber === params.card);
@@ -40,17 +44,21 @@ const ConFirmPin = () => {
                       name=""
                       id="oldPin"
                     />
-                    {/* <label htmlFor="OldPin">Confirm ATM Pin</label>
-                    <input type="password" name="" id="oldPin" /> */}
-                    {/* <p>Please Enter Correct Old ATM Pin</p> */}
+                    <label htmlFor="OldPin">Confirm ATM Pin</label>
+                    <input type="password" name="" id="oldPin" />
+                    <p>Please Enter Correct Old ATM Pin</p>
                   </div>
                   <div className="ConfirmBtn">
                     <MiniBtn
-                      MiniBtnFn={OnpinresertDone}
+                      MiniBtnFn={OngetReset}
                       name="next"
                       bgBtn="#486b00"
                     />
-                    <MiniBtn name="close" bgBtn="#d70026" />
+                    <MiniBtn
+                      MiniBtnFn={OngeClose}
+                      name="close"
+                      bgBtn="#d70026"
+                    />
                   </div>
                 </div>
               </div>

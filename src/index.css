@@ -33,4 +33,12 @@ body{
 
 @media (min-width: 0px) and (max-width: 480px){
 
+  .atm-body{
+    margin-top: 60px;
+  }
+
+  .atm-screen {
+    margin: 20px 0;
+}
+
 }
