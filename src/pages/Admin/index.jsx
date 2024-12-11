@@ -48,7 +48,7 @@ const Admin = () => {
                 <Inputfield
                   v={cardNum}
                   onChange={onchange}
-                  type="number"
+                  type="text"
                   placeholder="Enter Your Card Number"
                 />
 

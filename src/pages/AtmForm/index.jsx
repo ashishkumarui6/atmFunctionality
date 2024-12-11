@@ -123,7 +123,7 @@ const AtmFrom = () => {
                     </div>
                     <div className="child2">
                       <label htmlFor="phoneNumber">
-                        Name
+                        Phone
                         <span>*</span>
                       </label>
                       <input

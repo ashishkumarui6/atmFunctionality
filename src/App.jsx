@@ -11,6 +11,7 @@ import SucessDon from "./pages/SucessDon";
 import Withdrawal from "./pages/Withdrawal";
 import NotFound from "./pages/NotFound";
 import { ContextPro } from "./context";
+import PinChangeSucess from "./pages/PinChangeSucess";
 
 function App() {
   const ctx = useContext(ContextPro);
@@ -26,6 +27,7 @@ function App() {
           <Route path="/changepin/:card" element={<ChangePin />} />
           <Route path="/conFirmpin/:card" element={<ConFirmPin />} />
           <Route path="/sucessDon" element={<SucessDon />} />
+          <Route path="/PinChangeSucess" element={<PinChangeSucess />} />
         </Routes>
       ) : (
         <Routes>

@@ -8,7 +8,6 @@ import { ContextPro } from "../../context";
 const ConFirmPin = () => {
   const [newPin, setNewPin] = useState("");
   const ctx = useContext(ContextPro);
-  // const [renternewPin, setRenterNewPin] = useState("");
   const navigate = useNavigate();
   const params = useParams();
 
@@ -17,20 +16,7 @@ const ConFirmPin = () => {
   };
 
   const OngetReset = () => {
-    const u = JSON.parse(localStorage.getItem("users"));
-    const isExisting = u.find((it) => it.CardNumber === params.card);
-    const index = u.findIndex((it) => it.CardNumber === params.card);
-
-    if (isExisting) {
-      isExisting.pin = newPin;
-      u[index] = isExisting;
-
-      localStorage.setItem("users", JSON.stringify(u));
-
-      localStorage.removeItem("loggedUser");
-      ctx.getToken({});
-      navigate("/");
-    }
+    navigate("/PinChangeSucess");
   };
 
   return (
