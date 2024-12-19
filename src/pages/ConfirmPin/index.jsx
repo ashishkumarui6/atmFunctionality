@@ -1,15 +1,11 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import "./index.css";
 import MiniBtn from "../../widgets/MiniBtn";
 import { useNavigate, useParams } from "react-router-dom";
 import Container from "../../container";
-import { ContextPro } from "../../context";
 
 const ConFirmPin = () => {
-  const [newPin, setNewPin] = useState("");
-  const ctx = useContext(ContextPro);
   const navigate = useNavigate();
-  const params = useParams();
 
   const OngeClose = () => {
     navigate("/dashboard");
@@ -38,7 +34,7 @@ const ConFirmPin = () => {
                     />
                     <label htmlFor="OldPin">Confirm ATM Pin</label>
                     <input type="password" name="" id="oldPin" />
-                    <p>Please Enter Correct Old ATM Pin</p>
+                    {/* <p>Please Enter Correct Old ATM Pin</p> */}
                   </div>
                   <div className="ConfirmBtn">
                     <MiniBtn

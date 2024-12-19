@@ -21,23 +21,37 @@ const AtmFrom = () => {
   const bankAmount = useRef(null);
 
   const OnSaveData = () => {
-    const SaveUser = {
-      cardtype: cardtype.current.value,
-      bankCard: bankCard.current.value,
-      CardNumber: params.card,
-      valid: valid.current.value,
-      userName: userName.current.value,
-      phoneNumber: phoneNumber.current.value,
-      bankName: bankName.current.value,
-      pin: pin.current.value,
-      bankType: bankType.current.value,
-      bankAmount: bankAmount.current.value,
-    };
+    if (
+      cardtype.current.value === "" ||
+      bankCard.current.value === "" ||
+      valid.current.value === "" ||
+      userName.current.value === "" ||
+      phoneNumber.current.value === "" ||
+      bankName.current.value === "" ||
+      pin.current.value === "" ||
+      bankType.current.value === "" ||
+      bankAmount.current.value === ""
+    ) {
+      return alert("all fieald requerd");
+    } else {
+      const SaveUser = {
+        cardtype: cardtype.current.value,
+        bankCard: bankCard.current.value,
+        CardNumber: params.card,
+        valid: valid.current.value,
+        userName: userName.current.value,
+        phoneNumber: phoneNumber.current.value,
+        bankName: bankName.current.value,
+        pin: pin.current.value,
+        bankType: bankType.current.value,
+        bankAmount: bankAmount.current.value,
+      };
 
-    users.push(SaveUser);
+      users.push(SaveUser);
 
-    localStorage.setItem("users", JSON.stringify(users));
-    navigate("/");
+      localStorage.setItem("users", JSON.stringify(users));
+      navigate("/");
+    }
   };
 
   const OnCloseForm = () => {
