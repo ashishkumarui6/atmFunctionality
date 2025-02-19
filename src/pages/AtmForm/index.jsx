@@ -50,7 +50,7 @@ const AtmFrom = () => {
       users.push(SaveUser);
 
       localStorage.setItem("users", JSON.stringify(users));
-      navigate("/");
+      navigate("/pinGernateSuccess");
     }
   };
 

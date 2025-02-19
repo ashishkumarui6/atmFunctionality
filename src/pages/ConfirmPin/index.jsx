@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import MiniBtn from "../../widgets/MiniBtn";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Container from "../../container";
 
 const ConFirmPin = () => {

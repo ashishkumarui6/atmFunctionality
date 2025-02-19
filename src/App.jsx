@@ -12,6 +12,7 @@ import Withdrawal from "./pages/Withdrawal";
 import NotFound from "./pages/NotFound";
 import { ContextPro } from "./context";
 import PinChangeSucess from "./pages/PinChangeSucess";
+import PinGernateSuccess from "./pages/PinGernateSuccess";
 
 function App() {
   const ctx = useContext(ContextPro);
@@ -32,6 +33,7 @@ function App() {
       ) : (
         <Routes>
           <Route path="/" element={<Admin />} />
+          <Route path="/pinGernateSuccess" element={<PinGernateSuccess />} />
           <Route path="/pin/:card" element={<Userpin />} />
           <Route path="/form/:card" element={<AtmFrom />} />
           <Route path="*" element={<NotFound />} />
