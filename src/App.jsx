@@ -29,6 +29,7 @@ function App() {
           <Route path="/conFirmpin/:card" element={<ConFirmPin />} />
           <Route path="/sucessDon" element={<SucessDon />} />
           <Route path="/PinChangeSucess" element={<PinChangeSucess />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       ) : (
         <Routes>

@@ -1,20 +1,39 @@
 import React from "react";
-import Container from "../../container";
-
+import Error from "../../assets/ErrorPage.jpg";
+import styles from "./index.module.css";
+import { useNavigate } from "react-router-dom";
 const NotFound = () => {
+  const navigate = useNavigate("");
+
+  const GOTOHOME = () => {
+    navigate("/");
+  };
   return (
-    <Container>
-      <div>
-        <h2
+    <>
+      <div
+        style={{
+          height: "100vh",
+          background: "#fff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
           style={{
-            color: "#fff",
-            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
           }}
         >
-          Not Found
-        </h2>
+          <img src={Error} alt="ERROR" width={"100%"} height={"100%"} />
+          <button onClick={GOTOHOME} className={styles.button}>
+            GO TO HOME
+          </button>
+        </div>
       </div>
-    </Container>
+    </>
   );
 };
 
