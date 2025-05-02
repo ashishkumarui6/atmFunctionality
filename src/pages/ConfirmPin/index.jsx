@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import MiniBtn from "../../widgets/MiniBtn";
 import { useNavigate } from "react-router-dom";
 import Container from "../../container";
 
 const ConFirmPin = () => {
+  const [check, setCheck] = useState("");
+  const [recheck, setRECheck] = useState("");
   const navigate = useNavigate();
+
+  const getSubmit = () => {
+    if (!/^\d{4}$/.test(check)) {
+      alert("Allow only 4 digits");
+      return;
+    }
+    if (!/^\d{4}$/.test(recheck)) {
+      alert("Confirm Passwords not match");
+      return;
+    }
+    if (check === recheck) {
+      navigate("/PinChangeSucess");
+    } else {
+      alert("Passwords do not match");
+    }
+  };
 
   const OngeClose = () => {
     navigate("/dashboard");
-  };
-
-  const OngetReset = () => {
-    navigate("/PinChangeSucess");
   };
 
   return (
@@ -27,18 +41,23 @@ const ConFirmPin = () => {
                   <div className="upBottom">
                     <label htmlFor="OldPin">Enter New ATM Pin</label>
                     <input
-                      onChange={(e) => setNewPin(e.target.value)}
+                      onChange={(e) => setCheck(e.target.value)}
                       type="password"
                       name=""
                       id="oldPin"
                     />
                     <label htmlFor="OldPin">Confirm ATM Pin</label>
-                    <input type="password" name="" id="oldPin" />
+                    <input
+                      onChange={(e) => setRECheck(e.target.value)}
+                      type="password"
+                      name=""
+                      id="oldPin"
+                    />
                     {/* <p>Please Enter Correct Old ATM Pin</p> */}
                   </div>
                   <div className="ConfirmBtn">
                     <MiniBtn
-                      MiniBtnFn={OngetReset}
+                      MiniBtnFn={getSubmit}
                       name="next"
                       bgBtn="#486b00"
                     />
